@@ -3,7 +3,7 @@
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.estudo.config.Conexao;
+import br.com.estudo.config.database.JdbcConnection;
 
 public class Main {
 
@@ -11,7 +11,7 @@ public class Main {
 		
 		Connection con = null;
 		try {
-			con = Conexao.getConnection();
+			con = JdbcConnection.getConnection();
 			System.out.println("Conexão realizada com sucesso!");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -1,4 +1,4 @@
-package br.com.estudo.config;
+package br.com.estudo.config.database;
 
 
 
@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexao {
+public class JdbcConnection {
 	
 	private static  Connection conn = null;
 	private static final String USUARIO = "root";
