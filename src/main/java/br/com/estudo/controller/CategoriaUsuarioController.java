@@ -1,15 +1,15 @@
 package br.com.estudo.controller;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import br.com.estudo.config.database.ConnectionFactory;
-import br.com.estudo.config.database.JdbcConnection;
 import br.com.estudo.model.CategoriaUsuario;
 
 public class CategoriaUsuarioController {
 	
-	private JdbcConnection connection;
+	private Connection connection;
 	
 	public CategoriaUsuarioController() {
 		this.connection = new ConnectionFactory().getInstance();
@@ -27,6 +27,7 @@ public class CategoriaUsuarioController {
 			stmt.setString(2, categoriaUsuario.getDescricao());
 			
 			stmt.execute();
+			System.out.println("Adicionado!");	
 			stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

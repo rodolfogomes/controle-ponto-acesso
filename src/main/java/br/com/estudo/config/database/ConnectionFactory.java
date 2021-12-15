@@ -1,14 +1,21 @@
 package br.com.estudo.config.database;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 public class ConnectionFactory {
 	
-	private JdbcConnection con =null;
+	private  static Connection con =null;
 	
-	public JdbcConnection getInstance() {
+	public Connection getInstance() {
 		if(con == null) {
-			this.con = new JdbcConnection();
+			try {
+				con =  new JdbcConnection().getConnection();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-		return this.con;
+		return con;
 	}
 
 }
